@@ -1,0 +1,47 @@
+.departure-header {
+  background: #36AAFF;
+  height: 200px;
+  width: 100%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1940px;
+  width: 100%;
+}
+.departure-contents {
+  border: 16px solid #fff;
+  margin: 0 320px;
+  height: 1560px;
+  width: 100%;
+}
+.departure-contents > div {
+  color: #fff;
+}
+.departure-jp {
+  font-size: 240px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 160px;
+}
+.departure-en {
+  font-size: 96px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 120px;
+}
+.departure-time {
+  font-size: 400px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+}
+.center-line {
+  display: flex;
+  justify-content: center;
+}
+.center-line > div {
+  border-top: 16px solid #36AAFF;
+  width: 80%;
+}

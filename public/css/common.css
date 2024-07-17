@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.whole-area {
+  height: 2160px;
+  width: 3840px;
+  overflow: hidden;
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
