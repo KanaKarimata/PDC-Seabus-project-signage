@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="/css/time-schedule.css" type="text/css">
   <div class="time-schedule-area">
     <div class="time-schedule-header" translate="no">
-      山下公園 方面
+      ピア赤レンガ 方面
     </div>
     <div class="tables-area">
       <div class="time-schedule-table-area" v-for="(table, tableIndex) in splitTables" :key="tableIndex">
@@ -13,7 +13,7 @@
             <div translate="no">運航状況</div>
             <div translate="no">詳細</div>
           </div>
-          <div class="data" v-for="(row, rowIndex) in table" :key="rowIndex">
+          <div class="red-brick-data" v-for="(row, rowIndex) in table" :key="rowIndex">
             <div translate="no">{{ row.departure_time }}</div>
             <div translate="no">{{ row.operation_status_id }}</div>
             <div translate="no">{{ row.operation_status_detail_id }}</div>

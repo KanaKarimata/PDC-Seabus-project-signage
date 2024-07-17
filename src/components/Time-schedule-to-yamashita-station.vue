@@ -13,7 +13,7 @@
             <div translate="no">運航状況</div>
             <div translate="no">詳細</div>
           </div>
-          <div class="data" v-for="(row, rowIndex) in table" :key="rowIndex">
+          <div class="yamashita-data" v-for="(row, rowIndex) in table" :key="rowIndex">
             <div translate="no">{{ row.departure_time }}</div>
             <div translate="no">{{ row.operation_status_id }}</div>
             <div translate="no">{{ row.operation_status_detail_id }}</div>

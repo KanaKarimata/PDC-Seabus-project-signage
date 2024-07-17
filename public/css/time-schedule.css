@@ -75,34 +75,63 @@ table {
   font-weight: bold;
   letter-spacing: 2rem;
 }
-.time-schedule-table > .data {
+.time-schedule-table > .yokohama-data {
   display: flex;
   align-items: center;
-  height: 160px;
+  height: 140px;
   font-size: 64px;
   color: #000;
   font-weight: bold;
   letter-spacing: 1rem;
   margin: 2.5rem 0;
+  border-bottom: 8px solid #36AAFF;
+}
+.time-schedule-table > .red-brick-data {
+  display: flex;
+  align-items: center;
+  height: 140px;
+  font-size: 64px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  margin: 2.5rem 0;
+  border-bottom: 8px solid #AC1D35;
+}
+.time-schedule-table > .yamashita-data {
+  display: flex;
+  align-items: center;
+  height: 140px;
+  font-size: 64px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  margin: 2.5rem 0;
+  border-bottom: 8px solid #32cd32;
 }
 .time-schedule-table > .yokohama-header > div:first-child,
 .time-schedule-table > .yamashita-header > div:first-child,
 .time-schedule-table > .red-brick-header > div:first-child,
-.time-schedule-table > .data > div:first-child {
+.time-schedule-table > .yokohama-data > div:first-child,
+.time-schedule-table > .yamashita-data > div:first-child,
+.time-schedule-table > .red-brick-data > div:first-child {
   width: 560px;
   text-align: center;
 }
 .time-schedule-table > .yokohama-header > div:nth-child(2),
 .time-schedule-table > .yamashita-header > div:nth-child(2),
 .time-schedule-table > .red-brick-header > div:nth-child(2),
-.time-schedule-table > .data > div:nth-child(2) {
+.time-schedule-table > .yokohama-data > div:nth-child(2),
+.time-schedule-table > .yamashita-data > div:nth-child(2),
+.time-schedule-table > .red-brick-data > div:nth-child(2) {
   width: 600px;
   text-align: center;
 }
 .time-schedule-table > .yokohama-header > div:last-child,
 .time-schedule-table > .yamashita-header > div:last-child,
 .time-schedule-table > .red-brick-header > div:last-child,
-.time-schedule-table > .data > div:last-child {
+.time-schedule-table > .yokohama-data > div:last-child,
+.time-schedule-table > .yamashita-data > div:last-child,
+.time-schedule-table > .red-brick-data > div:last-child {
   width: 600px;
   text-align: center;
 }
