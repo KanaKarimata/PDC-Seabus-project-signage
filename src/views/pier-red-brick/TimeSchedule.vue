@@ -1,23 +1,23 @@
 <template>
   <TimeScheduleToYokohamaStation v-if="this.toYokohamaStation"/>
-  <TimeScheduleToPierRedBrick v-if="this.toPierRedBrick"/>
+  <TimeScheduleToYamashitaStation v-if="this.toYamashitaPark"/>
 </template>
 
 <script>
 import TimeScheduleToYokohamaStation from '../../components/Time-schedule-to-yokohama-station.vue'
-import TimeScheduleToPierRedBrick from '../../components/Time-schedule-to-pier-red-brick.vue';
+import TimeScheduleToYamashitaStation from '../../components/Time-schedule-to-yamashita-station.vue'
 
 export default {
-  name: 'TimeScheduleFromYamashitaPark',
+  name: 'TimeScheduleFromPierRedBrickPark',
   data() {
     return {
-      toYokohamaStation: true,
-      toPierRedBrick: false
+      toYokohamaStation: false,
+      toYamashitaPark: true
     }
   },
   components: {
     TimeScheduleToYokohamaStation,
-    TimeScheduleToPierRedBrick
+    TimeScheduleToYamashitaStation
   }
 }
 </script>

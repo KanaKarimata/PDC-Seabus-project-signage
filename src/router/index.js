@@ -3,6 +3,8 @@ import NextDepartureFromYamashitaPark from '../views/yamashita-park/NextDepartur
 import NextDepartureFromYokohamaStation from '../views/yokohama-station/NextDeparture.vue'
 import NextDepartureFromPierRedBrick from '../views/pier-red-brick/NextDeparture.vue'
 import TimeScheduleFromYamashitaPark from '../views/yamashita-park/TimeSchedule.vue'
+import TimeScheduleFromYokohamaPark from '../views/yokohama-station/TimeSchedule.vue'
+import TimeScheduleFromPierRedBrickPark from '../views/pier-red-brick/TimeSchedule.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/signage/time-schedule/from-yamashita-park',
     name: 'TimeScheduleFromYamashitaPark',
     component: TimeScheduleFromYamashitaPark
+  },
+  {
+    path: '/signage/time-schedule/from-yokohama-park',
+    name: 'TimeScheduleFromYokohamaPark',
+    component: TimeScheduleFromYokohamaPark
+  },
+  {
+    path: '/signage/time-schedule/from-pier-red-brick',
+    name: 'TimeScheduleFromPierRedBrickPark',
+    component: TimeScheduleFromPierRedBrickPark
   }
 ]
 

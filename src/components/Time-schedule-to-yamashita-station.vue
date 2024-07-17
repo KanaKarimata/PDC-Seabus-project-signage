@@ -2,13 +2,13 @@
   <link rel="stylesheet" href="/css/time-schedule.css" type="text/css">
   <div class="time-schedule-area">
     <div class="time-schedule-header" translate="no">
-      横浜駅東口 方面
+      山下公園 方面
     </div>
     <div class="tables-area">
       <div class="time-schedule-table-area" v-for="(table, tableIndex) in splitTables" :key="tableIndex">
-        <div class="yokohama-vertical-line"></div>
+        <div class="yamashita-vertical-line"></div>
         <div class="time-schedule-table">
-          <div class="yokohama-header">
+          <div class="yamashita-header">
             <div translate="no">出航時間</div>
             <div translate="no">運航状況</div>
             <div translate="no">詳細</div>
@@ -27,7 +27,7 @@
 <script>
 
 export default {
-  name: 'TimeScheduleToYokohamaStation',
+  name: 'TimeScheduleToYamashitaStation',
   data() {
     return {
       time_schedule_detail: Array.from({ length: 20 }, (v, k) => ({
