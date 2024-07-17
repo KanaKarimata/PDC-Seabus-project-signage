@@ -1,5 +1,15 @@
-.departure-header {
+.yokohama-departure-header {
   background: #36AAFF;
+  height: 200px;
+  width: 100%;
+}
+.red-brick-departure-header {
+  background: #AC1D35;
+  height: 200px;
+  width: 100%;
+}
+.yamashita-park-departure-header {
+  background: #32cd32;
   height: 200px;
   width: 100%;
 }
@@ -37,11 +47,21 @@
   text-align: center;
   margin-top: 40px;
 }
-.center-line {
+.yokohama-center-line,
+.red-brick-center-line,
+.yamashita-park-center-line {
   display: flex;
   justify-content: center;
 }
-.center-line > div {
+.yokohama-center-line > div {
   border-top: 16px solid #36AAFF;
+  width: 80%;
+}
+.red-brick-center-line > div {
+  border-top: 16px solid #AC1D35;
+  width: 80%;
+}
+.yamashita-park-center-line > div {
+  border-top: 16px solid #32cd32;
   width: 80%;
 }
