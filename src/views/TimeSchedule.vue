@@ -14,9 +14,6 @@ export default {
   name: 'TimeSchedule',
   data() {
     return {
-      toYokohamaStation: false,
-      toYamashitaPark: false,
-      toPierRedBrick: false,
       operation_rule_id: 0,
       time_schedule_id: 0,
       time_schedule_detail: Array.from({ length: 20 }, (v, k) => ({
@@ -57,7 +54,6 @@ export default {
       console.log('APIレスポンス:', response.data)
       this.time_schedule_detail = response.data.scheduleDetails
       this.time_schedule = response.data.time_schedule
-      this.setDestination()
       console.log(this.time_schedule.id)
     },
     startPolling() {
@@ -69,19 +65,6 @@ export default {
     stopPolling() {
       if (this.pollInterval) {
         clearInterval(this.pollInterval);
-      }
-    },
-    setDestination() {
-      if (!this.time_schedule || this.time_schedule.length == 0) {
-        this.toPierRedBrick = true
-        return
-      }
-      if (this.time_schedule.destination === this.getOperationRuleId.YOKOHAMA_STATION) {
-        this.toYokohamaStation = true
-      } else if (this.time_schedule.destination === this.getOperationRuleId.YAMASHITA_PARK) {
-        this.toYamashitaPark = true
-      } else if (this.time_schedule.destination === this.getOperationRuleId.RED_BRICK) {
-        this.toPierRedBrick = true
       }
     }
   }
