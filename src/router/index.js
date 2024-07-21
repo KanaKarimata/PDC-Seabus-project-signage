@@ -23,17 +23,17 @@ const routes = [
     component: NextDepartureFromPierRedBrick
   },
   {
-    path: '/signage/time-schedule/from-yamashita-park',
+    path: '/signage/:operation_rule_id/time-schedule/:time_schedule_id/from-yamashita-park',
     name: 'TimeScheduleFromYamashitaPark',
     component: TimeScheduleFromYamashitaPark
   },
   {
-    path: '/signage/time-schedule/from-yokohama-park',
+    path: '/signage/:operation_rule_id/time-schedule/:time_schedule_id/from-yokohama-park',
     name: 'TimeScheduleFromYokohamaPark',
     component: TimeScheduleFromYokohamaPark
   },
   {
-    path: '/signage/time-schedule/from-pier-red-brick',
+    path: '/signage/:operation_rule_id/time-schedule/:time_schedule_id/from-pier-red-brick',
     name: 'TimeScheduleFromPierRedBrickPark',
     component: TimeScheduleFromPierRedBrickPark
   }

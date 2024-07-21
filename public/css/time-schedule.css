@@ -58,7 +58,7 @@ table {
 .time-schedule-table > .yamashita-header {
   display: flex;
   align-items: center;
-  background: #32cd32;
+  background: #00cc00;
   height: 160px;
   font-size: 64px;
   color: #fff;
@@ -106,7 +106,7 @@ table {
   font-weight: bold;
   letter-spacing: 1rem;
   margin: 2.5rem 0;
-  border-bottom: 8px solid #32cd32;
+  border-bottom: 8px solid #00cc00;
 }
 .time-schedule-table > .yokohama-header > div:first-child,
 .time-schedule-table > .yamashita-header > div:first-child,
@@ -134,4 +134,10 @@ table {
 .time-schedule-table > .red-brick-data > div:last-child {
   width: 600px;
   text-align: center;
+}
+.blue-font {
+  color: #0000cd;
+}
+.red-font {
+  color: #cc0000;
 }
