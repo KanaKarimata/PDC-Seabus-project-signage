@@ -1,19 +1,33 @@
+
 <template>
   <link rel="stylesheet" href="/css/time-schedule.css" type="text/css">
   <div class="time-schedule-area">
     <div class="time-schedule-header" translate="no">
-      横浜駅東口 方面
+      {{  this.getDestination() }}
     </div>
     <div class="tables-area">
       <div class="time-schedule-table-area" v-for="(table, tableIndex) in splitTables" :key="tableIndex">
-        <div class="yokohama-vertical-line"></div>
+        <div class="vertical-line"
+            :class="{
+                'yokohama' : this.destination === this.getOperationRuleId.YOKOHAMA_STATION,
+                'yamashita' : this.destination === this.getOperationRuleId.YAMASHITA_PARK,
+                'red-brick' : this.destination === this.getOperationRuleId.RED_BRICK}"></div>
         <div class="time-schedule-table">
-          <div class="yokohama-header">
+          <div class="header"
+              :class="{
+                'yokohama' : this.destination === this.getOperationRuleId.YOKOHAMA_STATION,
+                'yamashita' : this.destination === this.getOperationRuleId.YAMASHITA_PARK,
+                'red-brick' : this.destination === this.getOperationRuleId.RED_BRICK}">
             <div translate="no">出航時間</div>
             <div translate="no">運航状況</div>
             <div translate="no">詳細</div>
           </div>
-          <div class="yokohama-data" v-for="(row, rowIndex) in table" :key="rowIndex">
+          <div class="data"
+              :class="{
+                'yokohama-line' : this.destination === this.getOperationRuleId.YOKOHAMA_STATION,
+                'yamashita-line' : this.destination === this.getOperationRuleId.YAMASHITA_PARK,
+                'red-brick-line' : this.destination === this.getOperationRuleId.RED_BRICK}"
+              v-for="(row, rowIndex) in table" :key="rowIndex">
             <div translate="no">{{ formatDate(row.departure_time) }}</div>
             <div translate="no" :class="{'blue-font': normal(row.operation_status_info), 'red-font' : irregular(row.operation_status_info)}">
               {{ this.viewStatusData(row) }}
@@ -28,16 +42,26 @@
 
 <script>
 import moment from 'moment';
+import { mapGetters } from 'vuex';
 export default {
-  name: 'TimeScheduleToYokohamaStation',
+  name: 'ChildTimeSchedule',
   props: {
     time_schedule_detail: {
       type: Array,
       required: true
+    },
+    destination: {
+      type: Number,
+      required: true
     }
   },
+  created() {
+    console.log('child')
+  },
   computed: {
+    ...mapGetters(['getOperationRuleId']),
     expandedDetails() {
+      console.log('child')
       const emptyDetails = Array.from({ length: 20 - this.time_schedule_detail.length }, (v, k) => ({
         id: null,
         departure_time: null,
@@ -49,6 +73,7 @@ export default {
       return [...this.time_schedule_detail, ...emptyDetails]
     },
     splitTables() {
+      console.log('child')
       const chunkSize = 10
       const chunks = []
       for (let i = 0; i < this.expandedDetails.length; i += chunkSize) {
@@ -58,6 +83,16 @@ export default {
     }
   },
   methods: {
+    getDestination() {
+      console.log('child')
+      if (this.destination === this.getOperationRuleId.YOKOHAMA_STATION) {
+        return '横浜駅東口 方面'
+      } else if (this.destination === this.getOperationRuleId.YAMASHITA_PARK) {
+        return '山下公園 方面'
+      } else if (this.destination === this.getOperationRuleId.RED_BRICK) {
+        return 'ピア赤レンガ方面 方面'
+      }
+    },
     formatDate(time) {
       if (!time) {
         return '-'

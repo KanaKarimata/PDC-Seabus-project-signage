@@ -57,6 +57,10 @@ export default {
       this.setDestination()
     },
     setDestination() {
+      if (!this.time_schedule || this.time_schedule.length == 0) {
+        this.toPierRedBrick = true
+        return
+      }
       if (this.time_schedule.destination === this.getOperationRuleId.YAMASHITA_PARK) {
         this.toYamashitaPark = true
       } else if (this.time_schedule.destination === this.getOperationRuleId.RED_BRICK) {

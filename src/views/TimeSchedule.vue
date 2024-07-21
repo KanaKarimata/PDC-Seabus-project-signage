@@ -1,24 +1,22 @@
 <template>
-  <TimeScheduleToYokohamaStation
+  <ChildTimeSchedule
     :time_schedule_detail="time_schedule_detail"
-    v-if="this.toYokohamaStation"/>
-  <TimeScheduleToYamashitaStation
-    :time_schedule_detail="time_schedule_detail"
-    v-if="this.toYamashitaPark"/>
+    :destination="time_schedule.destination"
+    :key="time_schedule.id"/>
 </template>
 
 <script>
 import axios from 'axios'
 import { mapGetters } from 'vuex';
-import TimeScheduleToYokohamaStation from '../../components/Time-schedule-to-yokohama-station.vue'
-import TimeScheduleToYamashitaStation from '../../components/Time-schedule-to-yamashita-station.vue'
+import ChildTimeSchedule from '../components/Child-time-schedule.vue'
 
 export default {
-  name: 'TimeScheduleFromPierRedBrickPark',
+  name: 'TimeSchedule',
   data() {
     return {
       toYokohamaStation: false,
       toYamashitaPark: false,
+      toPierRedBrick: false,
       operation_rule_id: 0,
       time_schedule_id: 0,
       time_schedule_detail: Array.from({ length: 20 }, (v, k) => ({
@@ -33,13 +31,18 @@ export default {
     }
   },
   components: {
-    TimeScheduleToYokohamaStation,
-    TimeScheduleToYamashitaStation
+    // TimeScheduleToYamashitaStation,
+    // TimeScheduleToPierRedBrick,
+    ChildTimeSchedule
   },
   created() {
     this.operation_rule_id = this.$route.params.operation_rule_id
     this.time_schedule_id = this.$route.params.time_schedule_id
     this.getTimeScheduleData()
+    this.startPolling()
+  },
+  beforeDestroy() {
+    this.stopPolling()
   },
   computed: {
     ...mapGetters(['getOperationRuleId'])
@@ -55,12 +58,30 @@ export default {
       this.time_schedule_detail = response.data.scheduleDetails
       this.time_schedule = response.data.time_schedule
       this.setDestination()
+      console.log(this.time_schedule.id)
+    },
+    startPolling() {
+      // 10秒ごとにデータを取得する
+      this.pollInterval = setInterval(() => {
+        this.getTimeScheduleData();
+      }, 10000); // 10000ms = 10秒
+    },
+    stopPolling() {
+      if (this.pollInterval) {
+        clearInterval(this.pollInterval);
+      }
     },
     setDestination() {
+      if (!this.time_schedule || this.time_schedule.length == 0) {
+        this.toPierRedBrick = true
+        return
+      }
       if (this.time_schedule.destination === this.getOperationRuleId.YOKOHAMA_STATION) {
         this.toYokohamaStation = true
       } else if (this.time_schedule.destination === this.getOperationRuleId.YAMASHITA_PARK) {
         this.toYamashitaPark = true
+      } else if (this.time_schedule.destination === this.getOperationRuleId.RED_BRICK) {
+        this.toPierRedBrick = true
       }
     }
   }

@@ -57,6 +57,10 @@ export default {
       this.setDestination()
     },
     setDestination() {
+      if (!this.time_schedule) {
+        this.toYokohamaStation = true
+        return
+      }
       if (this.time_schedule.destination === this.getOperationRuleId.YOKOHAMA_STATION) {
         this.toYokohamaStation = true
       } else if (this.time_schedule.destination === this.getOperationRuleId.RED_BRICK) {

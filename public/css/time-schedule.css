@@ -27,77 +27,41 @@ table {
   with: 100%;
   display: flex;
 }
-.yokohama-vertical-line {
+.vertical-line {
+  width: 160px;
+  height: 100%;
+}
+.yokohama {
   background: #36AAFF;
-  width: 160px;
-  height: 100%;
 }
-.yamashita-vertical-line {
-  background: #32cd32;
-  width: 160px;
-  height: 100%;
+.yamashita {
+  background: #6cbb5a;
 }
-.red-brick-vertical-line {
+.red-brick {
   background: #AC1D35;
-  width: 160px;
-  height: 100%;
-},
+}
 .time-schedule-table {
   width: 1760px;
 }
-.time-schedule-table > .yokohama-header {
+.time-schedule-table > .header {
   display: flex;
   align-items: center;
-  background: #36AAFF;
   height: 160px;
   font-size: 64px;
   color: #fff;
   font-weight: bold;
   letter-spacing: 2rem;
 }
-.time-schedule-table > .yamashita-header {
-  display: flex;
-  align-items: center;
-  background: #00cc00;
-  height: 160px;
-  font-size: 64px;
-  color: #fff;
-  font-weight: bold;
-  letter-spacing: 2rem;
-}
-.time-schedule-table > .red-brick-header {
-  display: flex;
-  align-items: center;
-  background: #AC1D35;
-  height: 160px;
-  font-size: 64px;
-  color: #fff;
-  font-weight: bold;
-  letter-spacing: 2rem;
-}
-.time-schedule-table > .yokohama-data {
-  display: flex;
-  align-items: center;
-  height: 140px;
-  font-size: 64px;
-  color: #000;
-  font-weight: bold;
-  letter-spacing: 1rem;
-  margin: 2.5rem 0;
+.yokohama-line {
   border-bottom: 8px solid #36AAFF;
 }
-.time-schedule-table > .red-brick-data {
-  display: flex;
-  align-items: center;
-  height: 140px;
-  font-size: 64px;
-  color: #000;
-  font-weight: bold;
-  letter-spacing: 1rem;
-  margin: 2.5rem 0;
+.yamashita-line {
+  border-bottom: 8px solid #6cbb5a;
+}
+.red-brick-line {
   border-bottom: 8px solid #AC1D35;
 }
-.time-schedule-table > .yamashita-data {
+.time-schedule-table > .data {
   display: flex;
   align-items: center;
   height: 140px;
@@ -106,32 +70,20 @@ table {
   font-weight: bold;
   letter-spacing: 1rem;
   margin: 2.5rem 0;
-  border-bottom: 8px solid #00cc00;
 }
-.time-schedule-table > .yokohama-header > div:first-child,
-.time-schedule-table > .yamashita-header > div:first-child,
-.time-schedule-table > .red-brick-header > div:first-child,
-.time-schedule-table > .yokohama-data > div:first-child,
-.time-schedule-table > .yamashita-data > div:first-child,
-.time-schedule-table > .red-brick-data > div:first-child {
+
+.time-schedule-table > .header > div:first-child,
+.time-schedule-table > .data > div:first-child {
   width: 560px;
   text-align: center;
 }
-.time-schedule-table > .yokohama-header > div:nth-child(2),
-.time-schedule-table > .yamashita-header > div:nth-child(2),
-.time-schedule-table > .red-brick-header > div:nth-child(2),
-.time-schedule-table > .yokohama-data > div:nth-child(2),
-.time-schedule-table > .yamashita-data > div:nth-child(2),
-.time-schedule-table > .red-brick-data > div:nth-child(2) {
+.time-schedule-table > .header > div:nth-child(2),
+.time-schedule-table > .data > div:nth-child(2) {
   width: 600px;
   text-align: center;
 }
-.time-schedule-table > .yokohama-header > div:last-child,
-.time-schedule-table > .yamashita-header > div:last-child,
-.time-schedule-table > .red-brick-header > div:last-child,
-.time-schedule-table > .yokohama-data > div:last-child,
-.time-schedule-table > .yamashita-data > div:last-child,
-.time-schedule-table > .red-brick-data > div:last-child {
+.time-schedule-table > .header > div:last-child,
+.time-schedule-table > .data > div:last-child {
   width: 600px;
   text-align: center;
 }
