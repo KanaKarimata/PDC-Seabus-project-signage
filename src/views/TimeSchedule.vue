@@ -57,7 +57,7 @@ export default {
       // 10秒ごとにデータを取得する
       this.pollInterval = setInterval(() => {
         this.getTimeScheduleData();
-      }, 10000); // 10000ms = 10秒
+      }, 30000); // 30000ms = 30秒
     },
     stopPolling() {
       if (this.pollInterval) {
