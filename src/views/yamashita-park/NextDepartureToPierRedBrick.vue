@@ -24,7 +24,7 @@ import axios from 'axios'
 import moment from 'moment';
 
 export default {
-  name: 'NextDepartureFromYokohamaStationToPierRedBrick',
+  name: 'NextDepartureFromYamashitaParkToPierRedBrick',
   data() {
     return {
       time_schedule_detail: [],
@@ -59,7 +59,7 @@ export default {
       return moment(time, 'HH:mm:ss').format('HH:mm');
     },
     startPolling() {
-      // 10秒ごとにデータを取得する
+      // 60秒ごとにデータを取得する
       this.pollInterval = setInterval(() => {
         this.getNextDepartureTime();
       }, 60000); // 10000ms = 10秒

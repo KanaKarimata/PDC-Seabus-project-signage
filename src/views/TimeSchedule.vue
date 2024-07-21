@@ -28,8 +28,6 @@ export default {
     }
   },
   components: {
-    // TimeScheduleToYamashitaStation,
-    // TimeScheduleToPierRedBrick,
     ChildTimeSchedule
   },
   created() {
@@ -54,7 +52,6 @@ export default {
       console.log('APIレスポンス:', response.data)
       this.time_schedule_detail = response.data.scheduleDetails
       this.time_schedule = response.data.time_schedule
-      console.log(this.time_schedule.id)
     },
     startPolling() {
       // 10秒ごとにデータを取得する

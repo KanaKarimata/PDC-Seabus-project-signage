@@ -55,13 +55,9 @@ export default {
       required: true
     }
   },
-  created() {
-    console.log('child')
-  },
   computed: {
     ...mapGetters(['getOperationRuleId']),
     expandedDetails() {
-      console.log('child')
       const emptyDetails = Array.from({ length: 20 - this.time_schedule_detail.length }, (v, k) => ({
         id: null,
         departure_time: null,
@@ -73,7 +69,6 @@ export default {
       return [...this.time_schedule_detail, ...emptyDetails]
     },
     splitTables() {
-      console.log('child')
       const chunkSize = 10
       const chunks = []
       for (let i = 0; i < this.expandedDetails.length; i += chunkSize) {
@@ -84,7 +79,6 @@ export default {
   },
   methods: {
     getDestination() {
-      console.log('child')
       if (this.destination === this.getOperationRuleId.YOKOHAMA_STATION) {
         return '横浜駅東口 方面'
       } else if (this.destination === this.getOperationRuleId.YAMASHITA_PARK) {

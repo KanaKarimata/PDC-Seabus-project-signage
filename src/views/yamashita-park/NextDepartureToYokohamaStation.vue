@@ -1,15 +1,15 @@
 <template>
   <link rel="stylesheet" href="/css/next-departure.css" type="text/css">
-  <div class="red-brick-departure-header"></div>
+  <div class="yokohama-departure-header"></div>
   <div class="center">
     <div class="departure-contents">
       <div class="departure-jp" translate="no">
-        ピア赤レンガ&ensp;方面
+        横浜駅東口&ensp;方面
       </div>
       <div class="departure-en" translate="no">
-        To Pier Red Brick
+        To Yokohama Station East Exit
       </div>
-      <div class="red-brick-center-line">
+      <div class="yokohama-center-line">
         <div></div>
       </div>
       <div class="departure-time" translate="no" :class="{'end-font ': this.endFlg}">
@@ -24,7 +24,7 @@ import axios from 'axios'
 import moment from 'moment';
 
 export default {
-  name: 'NextDepartureFromYokohamaStationToPierRedBrick',
+  name: 'NextDepartureFromYamashitaParkToYokohamaStation',
   data() {
     return {
       time_schedule_detail: [],
