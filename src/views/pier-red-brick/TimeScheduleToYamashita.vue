@@ -1,17 +1,16 @@
 <template>
-  <ChildTimeSchedule
+  <ChildTimeScheduleToYamashita
     :time_schedule_detail="time_schedule_detail"
-    :destination="time_schedule.destination"
-    :key="time_schedule.id"/>
+    :key="time_schedule_id"/>
 </template>
 
 <script>
 import axios from 'axios'
 import { mapGetters } from 'vuex';
-import ChildTimeSchedule from '../components/ChildTimeScheduleToYokohama.vue'
+import ChildTimeScheduleToYamashita from '../../components/ChildTimeScheduleToYamashita.vue'
 
 export default {
-  name: 'TimeSchedule',
+  name: 'TimeScheduleFromPierRedBrickToYamashitaPark',
   data() {
     return {
       operation_rule_id: 0,
@@ -28,7 +27,7 @@ export default {
     }
   },
   components: {
-    ChildTimeSchedule
+    ChildTimeScheduleToYamashita
   },
   created() {
     this.operation_rule_id = this.$route.params.operation_rule_id
