@@ -19,6 +19,7 @@
   align-items: center;
   height: 1940px;
   width: 100%;
+  font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 }
 .departure-contents {
   border: 16px solid #fff;

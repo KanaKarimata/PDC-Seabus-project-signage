@@ -14,12 +14,12 @@
             <div translate="no">運航状況</div>
             <div translate="no">詳細</div>
           </div>
-          <div class="data yokohama-line" v-for="(row, rowIndex) in table" :key="rowIndex">
+          <div class="data yokohama-line" v-for="(row, rowIndex) in table" :key="rowIndex" :class="{'pastTime': this.isPastTime(row.departure_time)}">
             <div translate="no">{{ formatDate(row.departure_time) }}</div>
             <div translate="no" :class="{'blue-font': normal(row.operation_status_info), 'red-font' : irregular(row.operation_status_info)}">
               {{ this.viewStatusData(row) }}
             </div>
-            <div translate="no">{{ this.viewDetailData(row) }}</div>
+            <div translate="no" :class="{'long-message' : this.longMessageFlg}">{{ this.viewDetailData(row) }}</div>
           </div>
         </div>
       </div>
@@ -36,6 +36,11 @@ export default {
     time_schedule_detail: {
       type: Array,
       required: true
+    }
+  },
+  data() {
+    return {
+      longMessageFlg: false
     }
   },
   computed: {
@@ -67,6 +72,20 @@ export default {
       }
       return moment(time, 'HH:mm:ss').format('HH:mm');
     },
+    formatTime() {
+      let date = new Date()
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      return `${hours}:${minutes}`;
+    },
+    isPastTime(time) {
+      if (this.formatTime() > time) {
+        return true
+      }
+      return false
+    },
     normal(info) {
       if (!info) {
         return false
@@ -90,6 +109,9 @@ export default {
         return '-'
       }
       if (detail.operation_status_detail_info.id === 12 && detail.detail_comment) {
+        if (detail.detail_comment.length > 6) {
+          this.longMessageFlg = true
+        }
         return detail.detail_comment
       }
       if (detail.operation_status_detail_info.id === 12) {
