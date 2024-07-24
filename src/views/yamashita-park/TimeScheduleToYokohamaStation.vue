@@ -48,7 +48,6 @@ export default {
           time_schedule_id: this.time_schedule_id,
           operation_rule_id: this.operation_rule_id
         }})
-      console.log('APIレスポンス:', response.data)
       this.time_schedule_detail = response.data.scheduleDetails
       this.time_schedule = response.data.time_schedule
     },
