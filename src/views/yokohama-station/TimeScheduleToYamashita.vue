@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     async getTimeScheduleData() {
-      const response = await axios.get('http://localhost:8000/operation-rule/signage/time-schedule-detail/index/', {
+      const response = await axios.get(process.env.VUE_APP_API_URL + '/operation-rule/signage/time-schedule-detail/index/', {
         params: {
           time_schedule_id: this.time_schedule_id,
           operation_rule_id: this.operation_rule_id

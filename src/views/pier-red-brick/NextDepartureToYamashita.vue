@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     async getNextDepartureTime() {
-      const response = await axios.get(`http://localhost:8000/operation-rule/signage/${this.operation_rule_id}/next-departure/${this.destination}`)
+      const response = await axios.get(process.env.VUE_APP_API_URL + `/operation-rule/signage/${this.operation_rule_id}/next-departure/${this.destination}`)
       this.time_schedule_detail = response.data
     },
     formatDate(time) {
